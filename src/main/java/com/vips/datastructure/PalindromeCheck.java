@@ -1,4 +1,4 @@
-package com.vips.datastructure.stack;
+package com.vips.datastructure;
 
 import java.util.Stack;
 
