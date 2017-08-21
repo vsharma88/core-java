@@ -24,6 +24,10 @@ public interface LinkedList {
         System.out.print(']');
     }
 
+    enum Position{
+        FIRST,LAST,OTHERS
+    };
+
 
     static int generateRandonNumber(){
         return ThreadLocalRandom.current().nextInt(0, 100000 + 1);

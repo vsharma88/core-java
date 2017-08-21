@@ -22,10 +22,6 @@ public class SinglyLinkedList implements LinkedList {
     private Node head;
     private int length;
 
-    public enum Position{
-        FIRST,LAST,OTHERS
-    };
-
     public void insertNode(Object data,Position position, int location){
         Node newNode = new Node(data);
         if(head == null){
