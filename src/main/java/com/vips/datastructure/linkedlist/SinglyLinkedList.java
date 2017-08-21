@@ -74,9 +74,10 @@ public class SinglyLinkedList implements LinkedList {
               if (location <= Integer.MIN_VALUE){
               }else{
                   Node prev = curr;
-                  while(curr != null && --location >0){
+                  while(curr != null && location >0){
                       prev = curr;
                       curr = curr.getNext();
+                      location--;
                   }
                  prev.setNext(curr.getNext());
                   this.length--;
@@ -96,6 +97,10 @@ public class SinglyLinkedList implements LinkedList {
 
     public int getLength(){
         return this.length;
+    }
+
+    public Node getHead(){
+        return this.head;
     }
 
     public static void main(String[] args) {

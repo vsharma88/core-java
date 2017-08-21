@@ -30,6 +30,6 @@ public interface LinkedList {
 
 
     static int generateRandonNumber(){
-        return ThreadLocalRandom.current().nextInt(0, 100000 + 1);
+        return ThreadLocalRandom.current().nextInt(0, 5 + 1);
     }
 }

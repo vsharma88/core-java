@@ -1,4 +1,4 @@
-package com.vips.datastructure;
+package com.vips.shorties.ds;
 
 import java.util.Stack;
 
