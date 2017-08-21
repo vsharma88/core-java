@@ -56,12 +56,12 @@ public class Node {
         return Objects.hash(data, leftPtr, rightPtr);
     }
 
-//    @Override
-//    public String toString() {
-//        return "Node{" +
-//                "data='" + data + '\'' +
-//                ", leftPtr=" + leftPtr +
-//                ", rightPtr=" + rightPtr +
-//                '}';
-//    }
+    @Override
+    public String toString() {
+        return "Node{" +
+                "data='" + data + '\'' +
+                ", leftPtr=" + leftPtr +
+                ", rightPtr=" + rightPtr +
+                '}';
+    }
 }
