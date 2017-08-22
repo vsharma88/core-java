@@ -103,6 +103,21 @@ public class SinglyLinkedList implements LinkedList {
         return this.head;
     }
 
+    public void setHead(Node head){ this.head = head;}
+
+
+    public Node reverseLinkedList(Node node){
+        Node curr = node;
+        Node prev = null;
+        while(curr != null){
+           Node next  = curr.getNext();
+            curr.setNext(prev);
+            prev = curr;
+            curr = next;
+        }
+       return prev;
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList list = new SinglyLinkedList();
 
@@ -131,5 +146,11 @@ public class SinglyLinkedList implements LinkedList {
         System.out.println("After deletion :");
         list.traverseList(list.head);
         System.out.println(" length of list : "+list.getLength());
+
+
+        System.out.println("After reversing list :");
+        list.setHead(list.reverseLinkedList(list.head));
+        list.traverseList(list.head);
+
     }
 }
