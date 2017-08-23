@@ -9,7 +9,6 @@ import java.util.concurrent.ThreadLocalRandom;
  **/
 public interface LinkedList {
 
-
     default void traverseList(Node head){
         Node curr = head;
         System.out.print('[');
@@ -24,10 +23,7 @@ public interface LinkedList {
         System.out.print(']');
     }
 
-    enum Position{
-        FIRST,LAST,OTHERS
-    };
-
+    enum Position{FIRST,LAST,OTHERS}
 
     static int generateRandonNumber(){
         return ThreadLocalRandom.current().nextInt(1, 9 + 1);

@@ -21,7 +21,6 @@ import com.vips.datastructure.linkedlist.SinglyLinkedList;
  **/
 public class LinkedListPartition {
 
-
     public static void partitionList(int pivot, SinglyLinkedList list){
         Node beforeStart = null;
         Node beforeEnd = null;

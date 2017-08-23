@@ -106,7 +106,7 @@ public class SinglyLinkedList implements LinkedList {
     public void setHead(Node head){ this.head = head;}
 
 
-    public Node reverseLinkedList(Node node){
+    public static Node reverseLinkedList(Node node){
         Node curr = node;
         Node prev = null;
         while(curr != null){

@@ -24,7 +24,6 @@ import com.vips.datastructure.linkedlist.SinglyLinkedList;
  **/
 public class LinkedListRotation {
 
-
     public static void rotateList(SinglyLinkedList list, int rotateBy){
         Node head = list.getHead();
         Node curr = list.getHead();
@@ -47,7 +46,6 @@ public class LinkedListRotation {
         list.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
     }
-
 
     public static void main(String[] args) {
         SinglyLinkedList list = new SinglyLinkedList();

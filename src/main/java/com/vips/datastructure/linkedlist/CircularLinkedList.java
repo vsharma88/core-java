@@ -55,6 +55,8 @@ public class CircularLinkedList implements LinkedList {
         return this.length;
     }
 
+    public Node getHead(){return this.head;}
+
     public static void main(String[] args) {
         CircularLinkedList list = new CircularLinkedList();
 
