@@ -6,7 +6,7 @@ import java.util.Objects;
  * @author Vipin Sharma
  * @category <blockquote>concepts</blockquote>
  *
- *  Basic Unit of any list dat structure
+ *  Basic unit of any linkedlist data structure
  *
  */
 
