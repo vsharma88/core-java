@@ -43,8 +43,8 @@ public class BogoSort implements Algorithms{
     public static void main(String[] args) {
         BogoSort sort = new BogoSort();
 
-        Integer[] unsortedArray = {12,3,1};
-//        Integer[] unsortedArray = {-1,12,3,-5,8,9,100,65,34};
+//        Integer[] unsortedArray = {12,3,1};
+        Integer[] unsortedArray = {-1,12,3,-5,8,9,100,65,34};
         System.out.println("Before Sorting array : ");
         sort.printArray(unsortedArray);
 
