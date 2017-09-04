@@ -47,7 +47,7 @@ public class AltReorderLinkedList {
         }
 
         System.out.println("After reordering :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
     }
 
     public static void main(String[] args) {
@@ -63,7 +63,7 @@ public class AltReorderLinkedList {
 
         //traversing before deletion
         System.out.println("Before re ordering :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
 
         reorderLinkedList(list);
     }

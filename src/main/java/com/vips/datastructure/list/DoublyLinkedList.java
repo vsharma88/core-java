@@ -122,7 +122,7 @@ public class DoublyLinkedList<T extends Comparable<T>> implements LinkedList{
 
         //traversing before deletion
         System.out.println("Before deletion :");
-        list.traverseList(list.head);
+        LinkedList.traverseList(list.head);
         System.out.println(" length of list : "+list.getLength());
 
         //deleting from the list
@@ -132,7 +132,7 @@ public class DoublyLinkedList<T extends Comparable<T>> implements LinkedList{
 
         //traversing list after deletion
         System.out.println("After deletion :");
-        list.traverseList(list.head);
+        LinkedList.traverseList(list.head);
         System.out.println(" length of list : "+list.getLength());
     }
 

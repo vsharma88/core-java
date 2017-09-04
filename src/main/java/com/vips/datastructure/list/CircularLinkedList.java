@@ -1,5 +1,7 @@
 package com.vips.datastructure.list;
 
+import sun.awt.image.ImageWatched;
+
 /**
  * @author Vipin Sharma
  * @category <blockquote>Concepts</blockquote>
@@ -70,7 +72,7 @@ public class CircularLinkedList<T extends Comparable<T>> implements LinkedList {
 
         //traversing before deletion
         System.out.println("Before deletion :");
-        list.traverseList(list.head);
+        LinkedList.traverseList(list.head);
         System.out.println(" length of list : "+list.getLength());
 
         list.deleteNode();
@@ -79,7 +81,7 @@ public class CircularLinkedList<T extends Comparable<T>> implements LinkedList {
 
         //traversing list after deletion
         System.out.println("After deletion :");
-        list.traverseList(list.head);
+        LinkedList.traverseList(list.head);
         System.out.println(" length of list : "+list.getLength());
 
     }

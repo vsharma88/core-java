@@ -43,7 +43,7 @@ public class LinkedListRotation {
         curr.setNext(null);
 
         System.out.println("After rotation :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
     }
 
@@ -63,7 +63,7 @@ public class LinkedListRotation {
 
         //traversing before deletion
         System.out.println("Before rotation :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
 
         rotateList(list,4);

@@ -67,7 +67,7 @@ public class LinkedListPartition {
             list.setHead(beforeStart);
         }
         System.out.println("After partition with partition value as : "+pivot);
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
     }
 
@@ -85,7 +85,7 @@ public class LinkedListPartition {
         list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.OTHERS,Integer.MIN_VALUE);
 
         System.out.println("Before partition :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
 
         partitionList(Integer.parseInt(list.getHead().getNext().getNext().getNext().getData().toString()),list);

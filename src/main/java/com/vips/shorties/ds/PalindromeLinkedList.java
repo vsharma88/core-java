@@ -58,7 +58,7 @@ public class PalindromeLinkedList {
 
 
         System.out.println("linked list is :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
         System.out.println("List is palindrome ? : "+isPalindrome(list.getHead()));
 
@@ -73,7 +73,7 @@ public class PalindromeLinkedList {
 
 
         System.out.println("linked list is :");
-        list1.traverseList(list1.getHead());
+        LinkedList.traverseList(list1.getHead());
         System.out.println(" length of list : "+list1.getLength());
         System.out.println("List is palindrome ? : "+isPalindrome(list1.getHead()));
 

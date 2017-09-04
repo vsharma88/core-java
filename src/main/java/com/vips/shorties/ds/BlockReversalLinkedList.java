@@ -53,13 +53,13 @@ public class BlockReversalLinkedList {
         list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.OTHERS,Integer.MIN_VALUE);
 
         System.out.println("Before reversal :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
 
         list.setHead(reversal(list.getHead(),4));
 
         System.out.println("Before reversal :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
 
     }
 }

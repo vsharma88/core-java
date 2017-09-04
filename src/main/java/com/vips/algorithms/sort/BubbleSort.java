@@ -13,30 +13,29 @@ import java.util.Arrays;
  * Space Complexity - O(1)
  *
  */
-public class BubbleSort {
+public class BubbleSort implements Algorithms {
 
-    public static void sort(int[] array){
-        System.out.println("Before sorting - "+ Arrays.toString(array));
-        int temp;
-        for(int j = array.length-1; j >0 ;j-- ){
-            for(int i = 0 ; i < j ; i++){
-                if(array[i]>array[i+1]){
-                    temp = array[i];
-                    array[i] = array[i+1];
-                    array[i+1] = temp;
+    public void sortArray(int[] array){
+        System.out.println("Before sorting : ");
+        printArray(array);
+        for(int i = 0; i < array.length-1; i++){
+            for(int j = 0; j < array.length-1-i; j++){
+                if(array[j] > array[j+1]){
+                    swap(array,j,j+1);
                 }
             }
         }
-        System.out.println("After sorting - "+Arrays.toString(array));
+        System.out.println("\nAfter sorting : ");
+        printArray(array);
     }
 
     /**
      * @param args
      */
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+        BubbleSort sort = new BubbleSort();
         int arr [] = {1,21,3,32,42,3,12};
-        sort(arr);
+        sort.sortArray(arr);
     }
 
 }

@@ -46,12 +46,12 @@ public class AdjacentNodeExchangeLinkedList {
         list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.OTHERS,Integer.MIN_VALUE);
 
         System.out.println("Before swap :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
 
         list.setHead(swapNodes(list.getHead()));
         System.out.println("After swap :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
 
     }
 }

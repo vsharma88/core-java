@@ -58,7 +58,7 @@ public class LinkListSummation {
             temp.setNext(new Node(carry));
         }
         System.out.println("Summation result : ");
-        listA.traverseList(result.getHead());
+        LinkedList.traverseList(result.getHead());
         System.out.println();
     }
 
@@ -70,7 +70,7 @@ public class LinkListSummation {
         listA.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
 
         System.out.println("Number 01 : ");
-        listA.traverseList(listA.getHead());
+        LinkedList.traverseList(listA.getHead());
         System.out.println();
 
         SinglyLinkedList listB = new SinglyLinkedList();
@@ -79,7 +79,7 @@ public class LinkListSummation {
         listB.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
 
         System.out.println("Number 02 : ");
-        listA.traverseList(listB.getHead());
+        LinkedList.traverseList(listB.getHead());
         System.out.println();
 
         summation(listA,listB);

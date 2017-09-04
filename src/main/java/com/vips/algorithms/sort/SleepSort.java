@@ -28,7 +28,7 @@ public class SleepSort implements Algorithms {
                 latch.countDown();
                 try {
                     latch.await();
-                    Thread.sleep(integer*100);
+                    Thread.sleep(integer*10);
                     System.out.print(integer+"  ");
                 }catch (InterruptedException e){
                     //do nothing

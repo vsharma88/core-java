@@ -9,7 +9,7 @@ import java.util.concurrent.ThreadLocalRandom;
  **/
 public interface LinkedList {
 
-    default void traverseList(Node head){
+    static  void traverseList(Node head){
         Node curr = head;
         System.out.print('[');
         while(curr != null){

@@ -37,7 +37,7 @@ public class DuplicatesLinkedList {
         }
 
         System.out.println("After removal :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
     }
 
@@ -55,7 +55,7 @@ public class DuplicatesLinkedList {
         list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.OTHERS,Integer.MIN_VALUE);
 
         System.out.println("Before removal :");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
 
         DuplicatesLinkedList.removeDuplicates(list);

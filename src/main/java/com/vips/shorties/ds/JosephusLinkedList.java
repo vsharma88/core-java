@@ -41,7 +41,7 @@ public class JosephusLinkedList {
         list.insertNode(LinkedList.generateRandomNumber());
 
         System.out.println("Before operation : ");
-        list.traverseList(list.getHead());
+        LinkedList.traverseList(list.getHead());
         getLastPosition(list,2);
     }
 }

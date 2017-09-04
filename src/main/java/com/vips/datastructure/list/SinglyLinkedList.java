@@ -130,7 +130,7 @@ public class SinglyLinkedList<T extends Comparable<T>> implements LinkedList {
 
         //traversing before deletion
         System.out.println("Before deletion :");
-        list.traverseList(list.head);
+        LinkedList.traverseList(list.head);
         System.out.println(" length of list : "+list.getLength());
 
         //deleting from the list
@@ -140,13 +140,13 @@ public class SinglyLinkedList<T extends Comparable<T>> implements LinkedList {
 
         //traversing list after deletion
         System.out.println("After deletion :");
-        list.traverseList(list.head);
+        LinkedList.traverseList(list.head);
         System.out.println(" length of list : "+list.getLength());
 
 
         System.out.println("After reversing list :");
         list.setHead(list.reverseLinkedList(list.head));
-        list.traverseList(list.head);
+        LinkedList.traverseList(list.head);
 
     }
 }
