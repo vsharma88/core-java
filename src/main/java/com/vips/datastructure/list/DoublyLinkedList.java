@@ -1,4 +1,4 @@
-package com.vips.datastructure.linkedlist;
+package com.vips.datastructure.list;
 
 /**
  * @author Vipin Sharma
@@ -12,13 +12,13 @@ package com.vips.datastructure.linkedlist;
  *   4.)Traverse & print content of list
  *
  **/
-public class DoublyLinkedList implements LinkedList{
+public class DoublyLinkedList<T extends Comparable<T>> implements LinkedList{
 
     private Node head;
     private int length;
 
 
-    public void insertNode(Object data,Position position, int location){
+    public void insertNode(T data,Position position, int location){
         Node newNode = new Node(data);
         if(this.head == null){
             this.head = newNode;
@@ -110,15 +110,15 @@ public class DoublyLinkedList implements LinkedList{
         DoublyLinkedList list = new DoublyLinkedList();
 
         //adding to the list
-        list.insertNode(LinkedList.generateRandonNumber(), Position.FIRST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), Position.FIRST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), Position.FIRST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), Position.LAST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), Position.LAST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), Position.LAST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(),Position.OTHERS,2);
-        list.insertNode(LinkedList.generateRandonNumber(),Position.OTHERS,4);
-        list.insertNode(LinkedList.generateRandonNumber(),Position.OTHERS,Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), Position.FIRST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), Position.FIRST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), Position.FIRST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), Position.LAST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), Position.LAST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), Position.LAST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(),Position.OTHERS,2);
+        list.insertNode(LinkedList.generateRandomNumber(),Position.OTHERS,4);
+        list.insertNode(LinkedList.generateRandomNumber(),Position.OTHERS,Integer.MIN_VALUE);
 
         //traversing before deletion
         System.out.println("Before deletion :");

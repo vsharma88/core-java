@@ -20,7 +20,7 @@ import java.util.concurrent.CountDownLatch;
 public class SleepSort implements Algorithms {
 
 
-    public void sortArray(Integer[] array){
+    public void sortArray(int[] array){
         CountDownLatch latch = new CountDownLatch(array.length);
 
         for (Integer integer: array) {
@@ -42,7 +42,7 @@ public class SleepSort implements Algorithms {
 
     public static void main(String[] args) {
         SleepSort sort = new SleepSort();
-        Integer[] unsortedArray = {1,12,3,5,8,9,100,65,34};
+        int[] unsortedArray = {1,12,3,5,8,9,100,65,34};
         System.out.println("Before Sorting array : ");
         sort.printArray(unsortedArray);
 

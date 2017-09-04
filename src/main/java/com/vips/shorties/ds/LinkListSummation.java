@@ -1,8 +1,8 @@
 package com.vips.shorties.ds;
 
-import com.vips.datastructure.linkedlist.LinkedList;
-import com.vips.datastructure.linkedlist.Node;
-import com.vips.datastructure.linkedlist.SinglyLinkedList;
+import com.vips.datastructure.list.LinkedList;
+import com.vips.datastructure.list.Node;
+import com.vips.datastructure.list.SinglyLinkedList;
 
 /**
  *	Given two numbers represented by two linked lists, write a function that returns sum list.
@@ -29,7 +29,7 @@ public class LinkListSummation {
         Node currB = listB.getHead();
 
         while(iteration-- > 0){
-            sum = carry + (Integer.parseInt(currA != null ? currA.getData() : "0")) + (Integer.parseInt(currB != null ? currB.getData() : "0"));
+            sum = carry + (Integer.parseInt(currA != null ? currA.getData().toString() : "0")) + (Integer.parseInt(currB != null ? currB.getData().toString() : "0"));
             carry = 0;
             if(sum >=10){
                 sum = sum % 10;
@@ -65,18 +65,18 @@ public class LinkListSummation {
     public static void main(String[] args) {
 
         SinglyLinkedList listA = new SinglyLinkedList();
-        listA.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
-        listA.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
-        listA.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        listA.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        listA.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        listA.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
 
         System.out.println("Number 01 : ");
         listA.traverseList(listA.getHead());
         System.out.println();
 
         SinglyLinkedList listB = new SinglyLinkedList();
-        listB.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
-        listB.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
-        listB.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        listB.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        listB.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        listB.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
 
         System.out.println("Number 02 : ");
         listA.traverseList(listB.getHead());

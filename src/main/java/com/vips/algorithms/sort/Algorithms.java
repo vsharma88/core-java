@@ -8,7 +8,7 @@ package com.vips.algorithms.sort;
 public interface Algorithms {
 
 
-    default void printArray(Object[] array){
+    default void printArray(int[] array){
         for (int i = 0; i < array.length ; i++)
             System.out.print(String.valueOf(array[i])+ "  ");
     }

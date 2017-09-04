@@ -1,8 +1,8 @@
 package com.vips.shorties.ds;
 
-import com.vips.datastructure.linkedlist.CircularLinkedList;
-import com.vips.datastructure.linkedlist.LinkedList;
-import com.vips.datastructure.linkedlist.Node;
+import com.vips.datastructure.list.CircularLinkedList;
+import com.vips.datastructure.list.LinkedList;
+import com.vips.datastructure.list.Node;
 
 /**
  * @author Vipin Sharma
@@ -33,12 +33,12 @@ public class JosephusLinkedList {
     public static void main(String[] args) {
         CircularLinkedList  list = new CircularLinkedList();
 
-        list.insertNode(LinkedList.generateRandonNumber());
-        list.insertNode(LinkedList.generateRandonNumber());
-        list.insertNode(LinkedList.generateRandonNumber());
-        list.insertNode(LinkedList.generateRandonNumber());
-        list.insertNode(LinkedList.generateRandonNumber());
-        list.insertNode(LinkedList.generateRandonNumber());
+        list.insertNode(LinkedList.generateRandomNumber());
+        list.insertNode(LinkedList.generateRandomNumber());
+        list.insertNode(LinkedList.generateRandomNumber());
+        list.insertNode(LinkedList.generateRandomNumber());
+        list.insertNode(LinkedList.generateRandomNumber());
+        list.insertNode(LinkedList.generateRandomNumber());
 
         System.out.println("Before operation : ");
         list.traverseList(list.getHead());

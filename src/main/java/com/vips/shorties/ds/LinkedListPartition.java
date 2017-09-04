@@ -1,8 +1,8 @@
 package com.vips.shorties.ds;
 
-import com.vips.datastructure.linkedlist.LinkedList;
-import com.vips.datastructure.linkedlist.Node;
-import com.vips.datastructure.linkedlist.SinglyLinkedList;
+import com.vips.datastructure.list.LinkedList;
+import com.vips.datastructure.list.Node;
+import com.vips.datastructure.list.SinglyLinkedList;
 
 /**
  * @author Vipin Sharma
@@ -31,7 +31,7 @@ public class LinkedListPartition {
         while(curr != null){
             Node nextPtr = curr.getNext();
             curr.setNext(null);
-            if(Integer.parseInt(curr.getData()) < pivot){
+            if(Integer.parseInt(curr.getData().toString()) < pivot){
                 if(beforeStart == null){
                     beforeStart = curr;
                     beforeEnd = beforeStart;
@@ -44,7 +44,7 @@ public class LinkedListPartition {
                     afterStart = curr;
                     afterEnd = afterStart;
                 }else{
-                    if(Integer.parseInt(curr.getData()) == pivot){
+                    if(Integer.parseInt(curr.getData().toString()) == pivot){
                         curr.setNext(afterStart);
                         afterStart = curr;
                     }else{
@@ -74,21 +74,21 @@ public class LinkedListPartition {
     public static void main(String[] args) {
         SinglyLinkedList list = new SinglyLinkedList();
 
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.LAST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.LAST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.LAST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.OTHERS,2);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.OTHERS,4);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.OTHERS,Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.LAST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.LAST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.LAST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.OTHERS,2);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.OTHERS,4);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.OTHERS,Integer.MIN_VALUE);
 
         System.out.println("Before partition :");
         list.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
 
-        partitionList(Integer.parseInt(list.getHead().getNext().getNext().getNext().getData()),list);
+        partitionList(Integer.parseInt(list.getHead().getNext().getNext().getNext().getData().toString()),list);
 
     }
 }

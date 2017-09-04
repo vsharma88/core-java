@@ -1,8 +1,8 @@
 package com.vips.shorties.ds;
 
-import com.vips.datastructure.linkedlist.LinkedList;
-import com.vips.datastructure.linkedlist.Node;
-import com.vips.datastructure.linkedlist.SinglyLinkedList;
+import com.vips.datastructure.list.LinkedList;
+import com.vips.datastructure.list.Node;
+import com.vips.datastructure.list.SinglyLinkedList;
 
 /**
  * @author Vipin Sharma
@@ -54,11 +54,11 @@ public class AltReorderLinkedList {
         SinglyLinkedList list = new SinglyLinkedList();
 
         //adding to the list
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.LAST, Integer.MIN_VALUE);
-        list.insertNode(LinkedList.generateRandonNumber(), LinkedList.Position.LAST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.FIRST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.LAST, Integer.MIN_VALUE);
+        list.insertNode(LinkedList.generateRandomNumber(), LinkedList.Position.LAST, Integer.MIN_VALUE);
 
 
         //traversing before deletion

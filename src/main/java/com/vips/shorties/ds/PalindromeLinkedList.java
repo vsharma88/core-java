@@ -1,8 +1,8 @@
 package com.vips.shorties.ds;
 
-import com.vips.datastructure.linkedlist.LinkedList;
-import com.vips.datastructure.linkedlist.Node;
-import com.vips.datastructure.linkedlist.SinglyLinkedList;
+import com.vips.datastructure.list.LinkedList;
+import com.vips.datastructure.list.Node;
+import com.vips.datastructure.list.SinglyLinkedList;
 
 /**
  * @author Vipin Sharma
@@ -32,7 +32,7 @@ public class PalindromeLinkedList {
         node_2 = SinglyLinkedList.reverseLinkedList(slow_ptr.getNext());
 
         while(node_2 != null){
-            if(!node_1.getData().equalsIgnoreCase(node_2.getData()))
+            if(!node_1.getData().toString().equalsIgnoreCase(node_2.getData().toString()))
                 return false;
 
           node_1 = node_1.getNext();

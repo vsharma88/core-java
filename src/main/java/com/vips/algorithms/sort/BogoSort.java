@@ -17,21 +17,21 @@ package com.vips.algorithms.sort;
  **/
 public class BogoSort implements Algorithms{
 
-    public void shuffleArray(Integer[] array){
+    public void shuffleArray(int[] array){
         for (int i = array.length-1; i >= 0 ; --i) {
-            int random = (int)(Math.random() * i);
+            int random = (int)(Math.random() *i);
             swapElement(array,i,random);
         }
 
     }
 
-    private void swapElement(Integer[] array, int i, int j){
+    private void swapElement(int[] array, int i, int j){
         int temp = array[i];
         array[i] = array[j];
         array[j] = temp;
     }
 
-    public boolean isSorted(Integer[] array){
+    public boolean isSorted(int[] array){
         for (int i = 0; i < array.length ; i++) {
             if(array[i] > array[i+1]){
                 return false;
@@ -43,8 +43,8 @@ public class BogoSort implements Algorithms{
     public static void main(String[] args) {
         BogoSort sort = new BogoSort();
 
-//        Integer[] unsortedArray = {12,3,1};
-        Integer[] unsortedArray = {-1,12,3,-5,8,9,100,65,34};
+       int[] unsortedArray = {12,3,1};
+//        int[] unsortedArray = {-1,12,3,-5,8,9,100,65,34};
         System.out.println("Before Sorting array : ");
         sort.printArray(unsortedArray);
 

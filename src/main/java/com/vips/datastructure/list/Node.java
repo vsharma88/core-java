@@ -1,4 +1,4 @@
-package com.vips.datastructure.linkedlist;
+package com.vips.datastructure.list;
 
 import java.util.Objects;
 
@@ -10,18 +10,18 @@ import java.util.Objects;
  *
  */
 
-public class Node {
-    private String data;
-    private Node leftPtr;
-    private Node rightPtr;
+public class Node<T extends Comparable<T>>{
+    private T data;
+    private Node<T> leftPtr;
+    private Node<T> rightPtr;
 
-    public Node(Object data){
-        this.data = String.valueOf(data);
+    public Node(T data){
+        this.data = data;
         this.leftPtr = null;
         this.rightPtr = null;
     }
 
-    public String getData() {
+    public T getData() {
         return data;
     }
 
@@ -58,10 +58,6 @@ public class Node {
 
     @Override
     public String toString() {
-        return "Node{" +
-                "data='" + data + '\'' +
-                ", leftPtr=" + leftPtr +
-                ", rightPtr=" + rightPtr +
-                '}';
+        return String.valueOf(this.getData());
     }
 }

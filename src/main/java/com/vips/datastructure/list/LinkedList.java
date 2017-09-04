@@ -1,4 +1,4 @@
-package com.vips.datastructure.linkedlist;
+package com.vips.datastructure.list;
 
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -13,7 +13,7 @@ public interface LinkedList {
         Node curr = head;
         System.out.print('[');
         while(curr != null){
-            System.out.print(","+curr.getData());
+            System.out.print(","+curr);
             if (curr.getNext() == head){
                 break;
             }
@@ -25,7 +25,7 @@ public interface LinkedList {
 
     enum Position{FIRST,LAST,OTHERS}
 
-    static int generateRandonNumber(){
+    static int generateRandomNumber(){
         return ThreadLocalRandom.current().nextInt(1, 9 + 1);
     }
 }
