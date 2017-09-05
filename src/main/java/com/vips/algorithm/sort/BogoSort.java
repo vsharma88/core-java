@@ -1,4 +1,6 @@
-package com.vips.algorithms.sort;
+package com.vips.algorithm.sort;
+
+import com.vips.algorithm.Algorithms;
 
 /**
  * @author Vipin Sharma
@@ -15,7 +17,7 @@ package com.vips.algorithms.sort;
  * performs better.
  *
  **/
-public class BogoSort implements Algorithms{
+public class BogoSort implements Algorithms {
 
     public void shuffleArray(int[] array){
         for (int i = array.length-1; i >= 0 ; --i) {

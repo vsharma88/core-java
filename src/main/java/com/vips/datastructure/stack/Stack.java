@@ -9,10 +9,10 @@ import com.vips.datastructure.list.Node;
  *
  *   ADT(Abstract Data Type)
  **/
-public interface Stack<T extends Comparable<T>>{
+public interface Stack<T>{
 
      void push(T data);
      T pop();
      T peek();
-     Node<T> getHead();
+
 }

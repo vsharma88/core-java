@@ -1,6 +1,6 @@
-package com.vips.algorithms.sort;
+package com.vips.algorithm.sort;
 
-import java.util.Arrays;
+import com.vips.algorithm.Algorithms;
 
 /**
  * @author Vipin Sharma
@@ -8,16 +8,20 @@ import java.util.Arrays;
  *  by repeatedly finding the minimum element (considering ascending order) from
  *  unsorted part and putting it at the beginning
  *
+ *    - In place
+ *    - Not stable
+ *
  * Time Complexity -  O(n2)
  * Space Complexity - O(1)
  *
  */
-public class SelectionSort {
+public class SelectionSort implements Algorithms {
 
-    public static void sort(int[] array){
-        System.out.println("Before sorting - "+Arrays.toString(array));
+    public void sort(int[] array){
+        System.out.println("Before sorting - ");
+        printArray(array);
         int temp;
-        for(int i = 0; i < array.length; i++){
+        for(int i = 0; i < array.length ; i++){
             for (int j = i+1 ; j < array.length; j++){
                 if(array[i]>array[j]){
                     temp = array[i];
@@ -26,13 +30,15 @@ public class SelectionSort {
                 }
             }
         }
-        System.out.println("After sorting - "+Arrays.toString(array));
+        System.out.println("\nAfter sorting - ");
+        printArray(array);
     }
 
     public static void main(String[] args) {
-        // TODO Auto-generated method stub
+        SelectionSort selectionSort = new SelectionSort();
+
         int arr [] = {1,21,3,32,42,3,12};
-        sort(arr);
+        selectionSort.sort(arr);
     }
 
 }

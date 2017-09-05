@@ -54,14 +54,13 @@ public class StackLinkedListImpl<T extends Comparable<T>> implements Stack<T>,Li
         }
     }
 
-    @Override
     public Node<T> getHead() {
         return head;
     }
 
 
     public static void main(String[] args) {
-        Stack<Integer> stack = new StackLinkedListImpl<>();
+        StackLinkedListImpl<Integer> stack = new StackLinkedListImpl<>();
 
         stack.push(10);
         stack.push(30);
@@ -70,7 +69,7 @@ public class StackLinkedListImpl<T extends Comparable<T>> implements Stack<T>,Li
         stack.push(50);
         stack.push(60);
 
-        System.out.println("Stack content after push : ");
+        System.out.println("\nStack content after push : ");
         LinkedList.traverseList(stack.getHead());
 
 
@@ -78,9 +77,9 @@ public class StackLinkedListImpl<T extends Comparable<T>> implements Stack<T>,Li
         stack.pop();
         stack.pop();
 
-        System.out.println();
-        System.out.println("Stack content after pop : ");
+        System.out.println("\n\nStack content after pop : ");
         LinkedList.traverseList(stack.getHead());
 
+        System.out.println("\n\nPeeked item from stack is : "+stack.peek());
     }
 }

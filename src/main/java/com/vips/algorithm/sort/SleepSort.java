@@ -1,5 +1,7 @@
-package com.vips.algorithms.sort;
+package com.vips.algorithm.sort;
 
+
+import com.vips.algorithm.Algorithms;
 
 import java.util.concurrent.CountDownLatch;
 

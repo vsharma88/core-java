@@ -1,13 +1,16 @@
-package com.vips.algorithms.sort;
+package com.vips.algorithm.sort;
 
 
-import java.util.Arrays;
+import com.vips.algorithm.Algorithms;
 
 /**
  * @author Vsharma
  *
  * Sorting algorithm that works by repeatedly swapping
  * the adjacent elements if they are in wrong order.
+ *
+ *   - Stable
+ *   - In place sorting
  *
  * Time Complexity - O(n2)
  * Space Complexity - O(1)
@@ -29,9 +32,6 @@ public class BubbleSort implements Algorithms {
         printArray(array);
     }
 
-    /**
-     * @param args
-     */
     public static void main(String[] args) {
         BubbleSort sort = new BubbleSort();
         int arr [] = {1,21,3,32,42,3,12};
