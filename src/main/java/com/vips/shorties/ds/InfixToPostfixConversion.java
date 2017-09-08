@@ -9,114 +9,63 @@ import java.util.Stack;
  **/
 public class InfixToPostfixConversion {
 
+    private static final String alphanumericRegex = "^[a-zA-Z0-9_]*$";
     private Stack<String> operatorStack = new Stack<>();
 
-
-    public void convertExpression(String infixExpression){
+    public void evaluate(String infixExpression){
         System.out.print("\nInfix expression : "+infixExpression+"\n");
+        System.out.print("\nPostfix expression :");
 
         String[] tokens = infixExpression.split(" ");
-        for(String token : tokens){
-            if(token.trim().equalsIgnoreCase("(")){
+        for(String token : tokens) {
+            if (token.trim().equalsIgnoreCase("(")) {
                 operatorStack.push(token.trim());
-            }else if(token.trim().equalsIgnoreCase(")")){
-                String itemPopped = operatorStack.pop();
-                while(!operatorStack.isEmpty() && !itemPopped.equalsIgnoreCase("(")){
-                    System.out.print(" "+operatorStack.pop());
-                }
-            } else if(token.trim().equalsIgnoreCase("+") || token.trim().equalsIgnoreCase("-") || token.trim().equalsIgnoreCase("*") || token.trim().equalsIgnoreCase("/")){
-                    if(token.equalsIgnoreCase("+") || token.equalsIgnoreCase("-")){
-                        String poppedItem = operatorStack.pop();
-                        while(!operatorStack.isEmpty() && !poppedItem.equalsIgnoreCase("(")){
-                            System.out.print(" "+operatorStack.pop());
-                        }
-                        operatorStack.push(token);
-                    }else{
-                        String itemPopped = operatorStack.pop();
-                        while(!operatorStack.isEmpty() && (itemPopped.equalsIgnoreCase("(") || itemPopped.equalsIgnoreCase("+") || itemPopped.equalsIgnoreCase("-"))){
-                            System.out.print(" "+operatorStack.pop());
-                        }
-                        operatorStack.push(token);
-                    }
-
-
-            } else{
-                System.out.print(" "+token);
-            }
-        }
-
-        while (!operatorStack.isEmpty()) {
-          String itemPopped = operatorStack.pop();
-            if(!itemPopped.equalsIgnoreCase("("))
-            System.out.print(" " + operatorStack.pop());
-        }
-
-    }
-
-
-
-    public void evaluateExpression(String infixExpression){
-        System.out.print("\nInfix expression : "+infixExpression+"\n");
-        System.out.print("\nPostfix expression : \n");
-
-        String[] tokens = infixExpression.split(" ");
-        for(String token : tokens){
-
-            if(token.trim().equalsIgnoreCase("(")){
-                operatorStack.push(token.trim());
-            } else if (token.trim().equalsIgnoreCase(")")){
-                while(!operatorStack.isEmpty()){
-                    String itemPopped = operatorStack.pop();
-                    if(!itemPopped.equalsIgnoreCase("(")){
-                        System.out.print(" "+itemPopped);
-                    }else{
-                        break;
-
-                    }
-                }
-            } else if (token.trim().equalsIgnoreCase("+") ||token.trim().equalsIgnoreCase("-")){
-               if(operatorStack.isEmpty()){
-                   operatorStack.push(token.trim());
-               }else{
-                   String itemPopped;
-                   while(!operatorStack.isEmpty()){
-                       itemPopped = operatorStack.peek();
-                       if(itemPopped.equalsIgnoreCase("(")){
-                          break;
-                       }
-
-                       System.out.print(" "+itemPopped);
-                       itemPopped = operatorStack.pop();
-
-                   }
-                   operatorStack.push(token.trim());
-               }
-
-            }else if (token.trim().equalsIgnoreCase("*") ||token.trim().equalsIgnoreCase("/")){
+            } else if (token.trim().equalsIgnoreCase(")")) {
                 String itemPopped;
-                while(!operatorStack.isEmpty()){
-                   itemPopped = operatorStack.peek();
-                   if(!itemPopped.equalsIgnoreCase("*") ||!itemPopped.equalsIgnoreCase("/") || itemPopped.equalsIgnoreCase("(")){
-                       operatorStack.push(token);
-                       break;
-                   }
-                    System.out.print(" "+itemPopped);
-                   itemPopped = operatorStack.pop();
+                while (!operatorStack.isEmpty()) {
+                    itemPopped = operatorStack.pop();
+                    if (!itemPopped.equalsIgnoreCase("(")) {
+                        System.out.print(" " + itemPopped);
+                    } else {
+                        break;
+                    }
                 }
-
+            } else if (token.matches(alphanumericRegex)){
+                System.out.print(" "+token.trim());
             } else{
-                System.out.print(" "+token);
+                int precedence = priority(token.trim());
+                while(!operatorStack.isEmpty() && priority(operatorStack.peek()) >= precedence){
+                    if(!operatorStack.peek().equalsIgnoreCase("("))
+                        System.out.print(" "+operatorStack.pop());
+                }
+                operatorStack.push(token.trim());
             }
+        }
 
+        while (!operatorStack.isEmpty()){
+            System.out.print(" "+operatorStack.pop());
         }
     }
 
 
+    private int priority(String operator){
+        int result = 0;
+        switch ( operator) {
+            case "+":
+            case "-": result = 1;
+                   break;
+
+            case "*" :
+            case "/" : result = 2;
+                   break;
+        }
+        return result;
+    }
 
     public static void main(String[] args) {
         InfixToPostfixConversion converter = new InfixToPostfixConversion();
 
-        String infixExpression = " A + B - ( C + D ) * E ";
-        converter.evaluateExpression(infixExpression);
+        String infixExpression = " ( A + B - ( C + D ) * E ) ";
+        converter.evaluate(infixExpression);
     }
 }
