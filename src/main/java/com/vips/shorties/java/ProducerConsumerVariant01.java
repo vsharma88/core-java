@@ -1,6 +1,5 @@
 package com.vips.shorties.java;
 
-import java.util.LinkedList;
 import java.util.Stack;
 
 public class ProducerConsumerVariant01 {
