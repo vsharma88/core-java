@@ -5,11 +5,10 @@ import java.util.Stack;
 
 /**
  * @author Vipin Sharma
- * @category <blockquote></blockquote>
+ * @category <blockquote>interview question</blockquote>
  * @DATE 21/09/17
  **/
 public class ReverseStack {
-
 
     public static void reverseStack(Stack<Integer> input){
         if(input.isEmpty()) return;
@@ -24,9 +23,9 @@ public class ReverseStack {
             return;
         }
 
-        Integer temptemp = integerStack.pop();
+        Integer popItem = integerStack.pop();
         pushItem(tempElem,integerStack);
-        integerStack.push(temptemp);
+        integerStack.push(popItem);
     }
 
     public static void main(String[] args) {
@@ -38,13 +37,12 @@ public class ReverseStack {
         integerStack.push(50);
         integerStack.push(90);
 
-        System.out.println("\nBefore operation : ");
+        System.out.print("\nBefore operation : ");
         System.out.print(Arrays.toString(integerStack.toArray()));
 
         ReverseStack.reverseStack(integerStack);
 
-
-        System.out.println("\nAfter operation : ");
+        System.out.print("\nAfter operation  : ");
         System.out.print(Arrays.toString(integerStack.toArray()));
 
     }

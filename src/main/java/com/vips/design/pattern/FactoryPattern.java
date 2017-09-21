@@ -6,4 +6,6 @@ package com.vips.design.pattern;
  * @DATE 20/09/17
  **/
 public class FactoryPattern {
+
+
 }
