@@ -1,5 +1,7 @@
 package com.vips.datastructure.tree;
 
+import com.vips.datastructure.list.Node;
+
 /**
  * @author Vipin Sharma
  * @category <blockquote></blockquote>
@@ -7,7 +9,7 @@ package com.vips.datastructure.tree;
  **/
 public interface Tree<T> {
 
-    void insertElement(T element );
+    void insertElement(T element);
     void deleteElement(T element);
 
 }

@@ -18,15 +18,15 @@ import com.vips.datastructure.list.SinglyLinkedList;
 public class AdjacentNodeExchangeLinkedList {
 
     public static Node swapNodes(Node head){
-      if(head == null || head.getNext() == null)
+      if(head == null || head.getRight() == null)
           return head;
       else{
-          Node next = head.getNext();
-          head.setNext(next.getNext());
+          Node next = head.getRight();
+          head.setNext(next.getRight());
           next.setNext(head);
           head = next;
 
-          head.getNext().setNext(swapNodes(head.getNext().getNext()));
+          head.getRight().setNext(swapNodes(head.getRight().getRight()));
           return head;
       }
 

@@ -37,18 +37,18 @@ public class SinglyLinkedList<T extends Comparable<T>> implements LinkedList {
            case OTHERS:
                if(location <= Integer.MIN_VALUE){
                }else{
-                   while(curr.getNext() != null && --location > 0) {
-                       curr = curr.getNext();
+                   while(curr.getRight() != null && --location > 0) {
+                       curr = curr.getRight();
                    }
-                   newNode.setNext(curr.getNext());
+                   newNode.setNext(curr.getRight());
                    this.length++;
                    curr.setNext(newNode);
                    break;
                }
 
            case LAST:
-               while(curr.getNext() != null){
-                   curr = curr.getNext();
+               while(curr.getRight() != null){
+                   curr = curr.getRight();
                }
                curr.setNext(newNode);
                this.length++;
@@ -61,7 +61,7 @@ public class SinglyLinkedList<T extends Comparable<T>> implements LinkedList {
       Node curr = this.head;
       switch (position){
           case FIRST:
-              head = curr.getNext();
+              head = curr.getRight();
               curr.setNext(null);
               this.length--;
               break;
@@ -72,19 +72,19 @@ public class SinglyLinkedList<T extends Comparable<T>> implements LinkedList {
                   Node prev = curr;
                   while(curr != null && location >0){
                       prev = curr;
-                      curr = curr.getNext();
+                      curr = curr.getRight();
                       location--;
                   }
-                 prev.setNext(curr.getNext());
+                 prev.setNext(curr.getRight());
                   this.length--;
                   break;
               }
 
           case LAST:
               Node prev = curr;
-              while(curr.getNext() != null){
+              while(curr.getRight() != null){
                   prev = curr;
-                  curr = curr.getNext();
+                  curr = curr.getRight();
               }
               this.length--;
            prev.setNext(null);
@@ -106,7 +106,7 @@ public class SinglyLinkedList<T extends Comparable<T>> implements LinkedList {
         Node curr = node;
         Node prev = null;
         while(curr != null){
-           Node next  = curr.getNext();
+           Node next  = curr.getRight();
             curr.setNext(prev);
             prev = curr;
             curr = next;

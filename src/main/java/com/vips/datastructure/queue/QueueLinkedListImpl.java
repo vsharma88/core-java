@@ -47,11 +47,11 @@ public class QueueLinkedListImpl<T extends Comparable<T>> implements Queue<T>, L
         }
 
         Node<T> result = this.head;
-        if(result.getNext() == null){
+        if(result.getRight() == null){
             //do nothing
             this.head = this.tail;
         }else{
-            this.head = this.head.getNext();
+            this.head = this.head.getRight();
             result.setNext(null);
         }
 

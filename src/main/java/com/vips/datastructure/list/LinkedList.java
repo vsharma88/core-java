@@ -14,10 +14,10 @@ public interface LinkedList {
         System.out.print('[');
         while(curr != null){
             System.out.print(","+curr);
-            if (curr.getNext() == head){
+            if (curr.getRight() == head){
                 break;
             }
-            curr = curr.getNext();
+            curr = curr.getRight();
 
         }
         System.out.print(']');

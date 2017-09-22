@@ -24,19 +24,19 @@ public class PalindromeLinkedList {
         Node node_2 = null;
 
 
-        while(fast_ptr != null && fast_ptr.getNext() != null){
-            slow_ptr = slow_ptr.getNext();
-            fast_ptr = fast_ptr.getNext().getNext();
+        while(fast_ptr != null && fast_ptr.getRight() != null){
+            slow_ptr = slow_ptr.getRight();
+            fast_ptr = fast_ptr.getRight().getRight();
         }
 
-        node_2 = SinglyLinkedList.reverseLinkedList(slow_ptr.getNext());
+        node_2 = SinglyLinkedList.reverseLinkedList(slow_ptr.getRight());
 
         while(node_2 != null){
             if(!node_1.getData().toString().equalsIgnoreCase(node_2.getData().toString()))
                 return false;
 
-          node_1 = node_1.getNext();
-          node_2 = node_2.getNext();
+          node_1 = node_1.getRight();
+          node_2 = node_2.getRight();
         }
 
 

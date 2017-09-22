@@ -20,14 +20,14 @@ public class AltReorderLinkedList {
         Node result = new Node(Integer.MAX_VALUE);
         Node curr1 = list.getHead();
         Node slow_ptr = curr1;
-        Node fast_ptr = slow_ptr.getNext();
+        Node fast_ptr = slow_ptr.getRight();
 
-        while(fast_ptr != null && fast_ptr.getNext() != null){
-            slow_ptr = slow_ptr.getNext();
-            fast_ptr = fast_ptr.getNext().getNext();
+        while(fast_ptr != null && fast_ptr.getRight() != null){
+            slow_ptr = slow_ptr.getRight();
+            fast_ptr = fast_ptr.getRight().getRight();
         }
 
-        Node curr2 = slow_ptr.getNext();
+        Node curr2 = slow_ptr.getRight();
         slow_ptr.setNext(null);
         curr2 = list.reverseLinkedList(curr2);
 
@@ -35,14 +35,14 @@ public class AltReorderLinkedList {
 
             if(curr1 != null){
                 result.setNext(curr1);
-                result = result.getNext();
-                curr1 = curr1.getNext();
+                result = result.getRight();
+                curr1 = curr1.getRight();
             }
 
             if(curr2 != null){
                 result.setNext(curr2);
-                result = result.getNext();
-                curr2 = curr2.getNext();
+                result = result.getRight();
+                curr2 = curr2.getRight();
             }
         }
 

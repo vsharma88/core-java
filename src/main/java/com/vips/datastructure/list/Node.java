@@ -25,11 +25,11 @@ public class Node<T extends Comparable<T>>{
         return data;
     }
 
-    public Node getNext(){
+    public Node getRight(){
         return this.rightPtr;
     }
 
-    public Node getPrevious(){
+    public Node getLeft(){
         return this.leftPtr;
     }
 
