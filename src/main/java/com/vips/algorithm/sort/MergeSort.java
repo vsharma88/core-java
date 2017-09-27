@@ -2,6 +2,12 @@ package com.vips.algorithm.sort;
 
 import com.vips.algorithm.Algorithms;
 
+/**
+ * @author Vipin Sharma
+ * @category <blockquote>concepts</blockquote>
+ * @DATE 7/9/17
+ **/
+
 public class MergeSort implements Algorithms {
 
 

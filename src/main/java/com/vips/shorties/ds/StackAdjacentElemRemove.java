@@ -38,7 +38,6 @@ public class StackAdjacentElemRemove {
         integerStack.push(50);
         integerStack.push(90);
         integerStack.push(90);
-        integerStack.push(780);
 
         System.out.println("Before operation : ");
         System.out.println(Arrays.toString(integerStack.toArray()));
