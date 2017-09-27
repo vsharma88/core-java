@@ -33,7 +33,7 @@ public class DuplicatesLinkedList {
                 //nodeMap.put(curr.getData(),curr);
                 counter++;
             }
-            curr = curr.getNext();
+            curr = curr.getRight();
         }
 
         System.out.println("After removal :");

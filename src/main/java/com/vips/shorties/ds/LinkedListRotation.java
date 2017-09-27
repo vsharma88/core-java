@@ -29,17 +29,17 @@ public class LinkedListRotation {
         Node curr = list.getHead();
 
         while(--rotateBy > 0 && curr != null){
-            curr = curr.getNext();
+            curr = curr.getRight();
         }
 
         Node  lastNode = curr;
-        while(lastNode.getNext() != null){
-            lastNode = lastNode.getNext();
+        while(lastNode.getRight() != null){
+            lastNode = lastNode.getRight();
         }
 
         lastNode.setNext(head);
 
-        list.setHead(curr.getNext());
+        list.setHead(curr.getRight());
         curr.setNext(null);
 
         System.out.println("After rotation :");

@@ -21,7 +21,7 @@ public class StackAdjacentElemRemove {
             }
             tempStack.push(tempElement);
         }
-        System.out.println("After operation : ");
+        System.out.print("After operation  : ");
         System.out.print(Arrays.toString(tempStack.toArray()));
     }
 
@@ -39,7 +39,7 @@ public class StackAdjacentElemRemove {
         integerStack.push(90);
         integerStack.push(90);
 
-        System.out.println("Before operation : ");
+        System.out.print("Before operation : ");
         System.out.println(Arrays.toString(integerStack.toArray()));
 
         StackAdjacentElemRemove.removeDuplicates(integerStack);

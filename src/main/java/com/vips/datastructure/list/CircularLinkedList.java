@@ -1,7 +1,5 @@
 package com.vips.datastructure.list;
 
-import sun.awt.image.ImageWatched;
-
 /**
  * @author Vipin Sharma
  * @category <blockquote>Concepts</blockquote>
@@ -28,8 +26,8 @@ public class CircularLinkedList<T extends Comparable<T>> implements LinkedList {
          }
 
       Node curr = this.head;
-      while (curr.getNext() != null && curr.getNext() != this.head){
-          curr = curr.getNext();
+      while (curr.getRight() != null && curr.getRight() != this.head){
+          curr = curr.getRight();
       }
 
       curr.setNext(newNode);
@@ -43,9 +41,9 @@ public class CircularLinkedList<T extends Comparable<T>> implements LinkedList {
 
         Node curr = this.head;
         Node prev = curr;
-        while (curr.getNext() != this.head){
+        while (curr.getRight() != this.head){
             prev = curr;
-            curr = curr.getNext();
+            curr = curr.getRight();
         }
 
         prev.setNext(this.head);

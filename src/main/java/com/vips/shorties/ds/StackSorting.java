@@ -23,7 +23,7 @@ public class StackSorting {
             tempStack.push(tempElement);
         }
 
-        System.out.println("\nAfter Sorting : ");
+        System.out.print("\nAfter Sorting : ");
         System.out.print(Arrays.toString(tempStack.toArray()));
 
     }
@@ -38,8 +38,10 @@ public class StackSorting {
         integerStack.push(50);
         integerStack.push(90);
         integerStack.push(780);
-        System.out.println("\nBefore sorting :");
+
+        System.out.print("\nBefore sorting :");
         System.out.print(Arrays.toString(integerStack.toArray()));
+
         StackSorting.sort(integerStack);
     }
 }

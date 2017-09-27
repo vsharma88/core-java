@@ -40,20 +40,20 @@ public class LinkListSummation {
                 result.setHead(new Node(sum));
             }else{
                 Node temp = result.getHead();
-                while(temp.getNext() != null){
-                    temp = temp.getNext();
+                while(temp.getRight() != null){
+                    temp = temp.getRight();
                 }
                 temp.setNext(new Node(sum));
             }
 
-            currA = currA.getNext();
-            currB = currB.getNext();
+            currA = currA.getRight();
+            currB = currB.getRight();
         }
 
         if(carry > 0){
             Node temp = result.getHead();
-            while(temp.getNext() != null){
-                temp = temp.getNext();
+            while(temp.getRight() != null){
+                temp = temp.getRight();
             }
             temp.setNext(new Node(carry));
         }

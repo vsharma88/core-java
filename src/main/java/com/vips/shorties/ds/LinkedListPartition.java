@@ -29,7 +29,7 @@ public class LinkedListPartition {
         Node curr = list.getHead();
 
         while(curr != null){
-            Node nextPtr = curr.getNext();
+            Node nextPtr = curr.getRight();
             curr.setNext(null);
             if(Integer.parseInt(curr.getData().toString()) < pivot){
                 if(beforeStart == null){
@@ -60,8 +60,8 @@ public class LinkedListPartition {
             list.setHead(afterStart);
         }else{
             Node tempPtr = beforeStart;
-            while(tempPtr.getNext() != null){
-                tempPtr = tempPtr.getNext();
+            while(tempPtr.getRight() != null){
+                tempPtr = tempPtr.getRight();
             }
             tempPtr.setNext(afterStart);
             list.setHead(beforeStart);
@@ -88,7 +88,7 @@ public class LinkedListPartition {
         LinkedList.traverseList(list.getHead());
         System.out.println(" length of list : "+list.getLength());
 
-        partitionList(Integer.parseInt(list.getHead().getNext().getNext().getNext().getData().toString()),list);
+        partitionList(Integer.parseInt(list.getHead().getRight().getRight().getRight().getData().toString()),list);
 
     }
 }

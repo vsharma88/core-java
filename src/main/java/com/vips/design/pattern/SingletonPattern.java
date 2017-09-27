@@ -22,7 +22,6 @@ public class SingletonPattern {
                 }
             }
         }
-
         return singletonPatternInstance;
     }
 

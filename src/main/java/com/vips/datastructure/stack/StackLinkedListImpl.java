@@ -38,7 +38,7 @@ public class StackLinkedListImpl<T extends Comparable<T>> implements Stack<T>,Li
         }else{
           this.length--;
           Node<T> result = this.head;
-          this.head = result.getNext();
+          this.head = result.getRight();
           result.setNext(null);
           return result.getData();
         }

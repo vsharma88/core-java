@@ -25,7 +25,7 @@ public class BlockReversalLinkedList {
 
         int i = 0;
         while( i < k && curr != null){
-            next = curr.getNext();
+            next = curr.getRight();
             curr.setNext(prev);
             prev = curr;
             curr = next;

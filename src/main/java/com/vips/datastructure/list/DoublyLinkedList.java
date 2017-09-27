@@ -41,9 +41,9 @@ public class DoublyLinkedList<T extends Comparable<T>> implements LinkedList{
                 }else{
 
                   while(curr!= null && --location > 0){
-                      curr = curr.getNext();
+                      curr = curr.getRight();
                   }
-                  newNode.setNext(curr.getNext());
+                  newNode.setNext(curr.getRight());
                   newNode.setPrevious(curr);
                   curr.setNext(newNode);
                   this.length++;
@@ -51,8 +51,8 @@ public class DoublyLinkedList<T extends Comparable<T>> implements LinkedList{
                 }
 
             case LAST:
-                while(curr.getNext() != null){
-                    curr = curr.getNext();
+                while(curr.getRight() != null){
+                    curr = curr.getRight();
                 }
                 curr.setNext(newNode);
                 newNode.setPrevious(curr);
@@ -71,8 +71,8 @@ public class DoublyLinkedList<T extends Comparable<T>> implements LinkedList{
         Node curr = this.head;
         switch (position){
             case FIRST:
-                curr.getNext().setPrevious(null);
-                this.head = curr.getNext();
+                curr.getRight().setPrevious(null);
+                this.head = curr.getRight();
                 curr.setNext(null);
                 this.length--;
                 break;
@@ -80,19 +80,19 @@ public class DoublyLinkedList<T extends Comparable<T>> implements LinkedList{
                 if(location <= Integer.MIN_VALUE){
                 }else{
                     while(curr!= null && --location > 0){
-                        curr = curr.getNext();
+                        curr = curr.getRight();
                     }
-                    curr.getPrevious().setNext(curr.getNext());
-                    curr.getNext().setPrevious(curr.getPrevious());
+                    curr.getLeft().setNext(curr.getRight());
+                    curr.getRight().setPrevious(curr.getLeft());
                     curr.setPrevious(null);
                     this.length--;
                     break;
                 }
             case LAST:
-                while(curr.getNext() != null){
-                    curr = curr.getNext();
+                while(curr.getRight() != null){
+                    curr = curr.getRight();
                 }
-                curr.getPrevious().setNext(null);
+                curr.getLeft().setNext(null);
                 curr.setPrevious(null);
                 this.length--;
                 break;

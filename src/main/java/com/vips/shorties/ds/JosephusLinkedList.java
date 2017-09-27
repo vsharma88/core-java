@@ -21,9 +21,9 @@ public class JosephusLinkedList {
        Node curr = list.getHead();
         for(int count = list.getLength() ; count > 1 ; --count){
             for(int i = 0; i < k-1 ; ++i){
-                curr = curr.getNext();
+                curr = curr.getRight();
             }
-           curr.setNext(curr.getNext().getNext());
+           curr.setNext(curr.getRight().getRight());
         }
         System.out.println();
         System.out.println("The last node is : ");
