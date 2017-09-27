@@ -10,6 +10,8 @@ import com.vips.datastructure.list.Node;
 public interface Tree<T> {
 
     void insertElement(T element);
-    void deleteElement(T element);
+    T deleteElement(T element);
+    T getMaxElement();
+    T getMinElement();
 
 }

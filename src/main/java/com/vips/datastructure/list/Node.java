@@ -25,6 +25,10 @@ public class Node<T extends Comparable<T>>{
         return data;
     }
 
+    public void setData(T data) {
+        this.data = data;
+    }
+
     public Node getRight(){
         return this.rightPtr;
     }
