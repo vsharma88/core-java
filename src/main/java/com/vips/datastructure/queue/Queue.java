@@ -10,8 +10,17 @@ import com.vips.datastructure.list.Node;
 public interface Queue<T extends Comparable<T>> {
 
     void enqueue(T data);
+
     T dequeue();
+
     T peek();
 
     Node<T> getHead();
+
+    default void  traverseQueue(Node<T> node){
+        while(node != null){
+            System.out.print(" "+node.getData()+ " ");
+            node = node.getLeft();
+        }
+    }
 }

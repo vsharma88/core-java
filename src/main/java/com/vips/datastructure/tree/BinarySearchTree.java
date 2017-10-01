@@ -44,6 +44,47 @@ public class BinarySearchTree<T> implements Tree<Integer>{
         return getMinimum(this.rootNode);
     }
 
+    @Override
+    public void traverse(Strategy strategy) {
+        switch (strategy){
+            case IN_ORDER:
+                System.out.println("\nIn Order Traversal");
+                inOrder(this.rootNode);
+                break;
+            case PRE_ORDER:
+                System.out.println("\nPre-Order Traversal ");
+                preOrder(this.rootNode);
+                break;
+            case POST_ORDER:
+                System.out.println("\nPost Order Traversal ");
+                postOrder(this.rootNode);
+                break;
+            case LEVEL_ORDER:
+                break;
+        }
+    }
+
+    private void preOrder(Node<Integer> node){
+        if(node == null) return;
+        System.out.print(" "+node.getData()+" ");
+        preOrder(node.getLeft());
+        preOrder(node.getRight());
+    }
+
+    private void postOrder(Node<Integer> node){
+        if(node==null) return;
+        postOrder(node.getLeft());
+        postOrder(node.getRight());
+        System.out.print(" "+node.getData()+" ");
+    }
+
+    private void inOrder(Node<Integer> node){
+        if(node==null) return;
+        inOrder(node.getLeft());
+        System.out.print(" "+node.getData()+" ");
+        inOrder(node.getRight());
+    }
+
 
     private Node<Integer> delete(Node<Integer> node, Integer data){
         if(node.getData() > data){
@@ -125,18 +166,25 @@ public class BinarySearchTree<T> implements Tree<Integer>{
         BST.insertElement(8);
         BST.insertElement(6);
 
+        BST.traverse(Strategy.IN_ORDER);
+        BST.traverse(Strategy.PRE_ORDER);
+        BST.traverse(Strategy.POST_ORDER);
 
-        System.out.println("Minimum Element : ");
-        System.out.println(BST.getMinElement());
-        System.out.println("Maximum Element : ");
-        System.out.println(BST.getMaxElement());
 
-        System.out.println("\n After deletion : ");
+        System.out.print("\n\nMinimum Element : ");
+        System.out.print(BST.getMinElement());
+        System.out.print("\nMaximum Element : ");
+        System.out.print(BST.getMaxElement());
+
+        System.out.print(" \n\n After deletion : \n\n");
+
         BST.deleteElement(6);
         BST.deleteElement(12);
-        System.out.println("Minimum Element : ");
-        System.out.println(BST.getMinElement());
-        System.out.println("Maximum Element : ");
-        System.out.println(BST.getMaxElement());
+
+        System.out.print("Minimum Element : ");
+        System.out.print(BST.getMinElement());
+        System.out.print("\nMaximum Element : ");
+        System.out.print(BST.getMaxElement());
+
     }
 }
