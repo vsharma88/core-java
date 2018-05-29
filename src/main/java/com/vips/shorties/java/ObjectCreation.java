@@ -1,4 +1,4 @@
-package com.vips.core;
+package com.vips.shorties.java;
 
 /**
  * Created by vipinsharma on 29/05/18.

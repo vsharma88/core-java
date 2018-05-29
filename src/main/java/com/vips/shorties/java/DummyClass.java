@@ -1,4 +1,4 @@
-package com.vips.core;
+package com.vips.shorties.java;
 
 class DummyClass implements Cloneable{
         private double randomNumber = Math.random();
