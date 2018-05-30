@@ -31,7 +31,6 @@ public class NaturalNumberPrint {
             }
 
         });
-
         threadOdd.setName("odd Thread ");
 
         Thread threadEven = new Thread(() -> {
