@@ -1,4 +1,6 @@
-package com.vips.algorithm.sort;
+package com.vips.algorithm.sort.version02;
+
+import com.vips.algorithm.sort.SortingAlgorithms;
 
 import java.util.Arrays;
 
@@ -15,19 +17,20 @@ import java.util.Arrays;
  * Space Complexity - O(1)
  *
  */
-public class BubbleSortAlgorithm implements SortingAlgorithms{
+public class BubbleSortImplementation implements SortingAlgorithms {
 
-    // This implementation sorts in ascending order
     public static void main(String[] args) {
+        SortingAlgorithms implementation = new BubbleSortImplementation();
         int [] arrayToSort = SortingAlgorithms.getArrayOfRandomIntegers(20);
         System.out.println("\nUnsorted array : "+Arrays.toString(arrayToSort));
-        sortArrayAscendingOrder(arrayToSort);
+        implementation.sortArrayAscendingOrder(arrayToSort);
         System.out.println("Array sorted in ascending order using Bubble sort : "+Arrays.toString(arrayToSort));
-        sortArrayDescendingOrder(arrayToSort);
+        implementation.sortArrayDescendingOrder(arrayToSort);
         System.out.println("Array sorted in descending order using Bubble sort : "+Arrays.toString(arrayToSort));
     }
 
-    private static void sortArrayDescendingOrder(int[] arrayToSort){
+    @Override
+    public  void sortArrayDescendingOrder(int[] arrayToSort){
         for(int pivotPoint = arrayToSort.length-1; pivotPoint > 0; pivotPoint--){
             for(int initialPosition = 0 ; initialPosition < pivotPoint ; initialPosition++ ){
                 if(arrayToSort[initialPosition] < arrayToSort[initialPosition+1])
@@ -36,7 +39,8 @@ public class BubbleSortAlgorithm implements SortingAlgorithms{
         }
     }
 
-    private static void sortArrayAscendingOrder(int[] arrayToSort) {
+    @Override
+    public void sortArrayAscendingOrder(int[] arrayToSort) {
         for(int pivotPoint = arrayToSort.length-1; pivotPoint > 0; pivotPoint--){
             for(int initialPosition = 0 ; initialPosition < pivotPoint ; initialPosition++ ){
                 if(arrayToSort[initialPosition] > arrayToSort[initialPosition+1])

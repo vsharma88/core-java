@@ -18,4 +18,8 @@ public interface SortingAlgorithms {
     static int[] getArrayOfRandomIntegers(int limit) {
         return new Random().ints(100,10000).limit(limit).toArray();
     }
+
+     void sortArrayAscendingOrder(int[] arrayToSort);
+
+     void sortArrayDescendingOrder(int[] arrayToSort);
 }

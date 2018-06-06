@@ -1,4 +1,6 @@
-package com.vips.algorithm.sort;
+package com.vips.algorithm.sort.version02;
+
+import com.vips.algorithm.sort.SortingAlgorithms;
 
 import java.util.Arrays;
 
@@ -16,18 +18,20 @@ import java.util.Arrays;
  * Space Complexity - O(1)
  *
  */
-public class SelectionSortAlgorithm implements SortingAlgorithms{
+public class SelectionSortImplementation implements SortingAlgorithms {
 
     public static void main(String[] args) {
+        SortingAlgorithms implementation = new SelectionSortImplementation();
         int [] arrayToSort = SortingAlgorithms.getArrayOfRandomIntegers(20);
         System.out.println("\nUnsorted array : "+ Arrays.toString(arrayToSort));
-        sortArrayAscendingOrder(arrayToSort);
+        implementation.sortArrayAscendingOrder(arrayToSort);
         System.out.println("Array sorted in ascending order using Selection sort : "+Arrays.toString(arrayToSort));
-        sortArrayDescendingOrder(arrayToSort);
+        implementation.sortArrayDescendingOrder(arrayToSort);
         System.out.println("Array sorted in descending order using Selection sort : "+Arrays.toString(arrayToSort));
     }
 
-    private static void sortArrayAscendingOrder(int[] arrayToSort) {
+    @Override
+    public void sortArrayAscendingOrder(int[] arrayToSort) {
         for(int pivotPoint = arrayToSort.length-1 ; pivotPoint > 0; pivotPoint--){
             int largestElementAt = 0;
             for(int traversalPoint = 1 ; traversalPoint <= pivotPoint; traversalPoint++){
@@ -39,7 +43,8 @@ public class SelectionSortAlgorithm implements SortingAlgorithms{
         }
     }
 
-    private static  void sortArrayDescendingOrder(int[] arrayToSort){
+    @Override
+    public void sortArrayDescendingOrder(int[] arrayToSort){
         for(int pivotPoint = arrayToSort.length-1 ; pivotPoint > 0; pivotPoint --){
             int smallestElementAt = 0;
             for(int traversalPoint = 1; traversalPoint <= pivotPoint ; traversalPoint++){
