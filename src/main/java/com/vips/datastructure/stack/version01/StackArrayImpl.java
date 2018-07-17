@@ -1,6 +1,4 @@
-package com.vips.datastructure.stack;
-
-import com.vips.algorithm.Algorithms;
+package com.vips.datastructure.stack.version01;
 
 /**
  * @author Vipin Sharma

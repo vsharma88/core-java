@@ -1,0 +1,10 @@
+
+# Stacks :
+  1.) ADT i.e it doesn't dictate about how data is stored, only concern is to the operations that are allowed.
+  2.) Push, Pop , Peek
+  3.) Sequential Order Access (SOA) i.e always from TOP. LIFO strategy
+  4.) Ideal data structure to implement stack is LinkedList (arrays but not ideal one as its not based on SOA strategy)
+  5.) Time complexity :
+            Linked list - O(1) for all three operations.
+            Array - O(n) for insertion if array is full since at that point shifting is required.
+  6.) If you already know size or number of elements array could be a good option.

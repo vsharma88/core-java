@@ -1,7 +1,5 @@
 package com.vips.algorithm.sort.version02;
 
-import com.vips.algorithm.sort.SortingAlgorithms;
-
 import java.util.Arrays;
 
 /**

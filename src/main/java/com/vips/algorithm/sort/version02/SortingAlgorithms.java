@@ -1,4 +1,4 @@
-package com.vips.algorithm.sort;
+package com.vips.algorithm.sort.version02;
 
 import java.util.Random;
 
@@ -16,7 +16,7 @@ public interface SortingAlgorithms {
     }
 
     static int[] getArrayOfRandomIntegers(int limit) {
-        return new Random().ints(100,10000).limit(limit).toArray();
+        return new Random().ints(10,100).limit(limit).toArray();
     }
 
      void sortArrayAscendingOrder(int[] arrayToSort);

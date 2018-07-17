@@ -1,4 +1,4 @@
-package com.vips.algorithm;
+package com.vips.algorithm.sort.version01;
 
 /**
  * @author Vipin Sharma

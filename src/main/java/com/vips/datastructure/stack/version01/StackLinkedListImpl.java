@@ -1,4 +1,4 @@
-package com.vips.datastructure.stack;
+package com.vips.datastructure.stack.version01;
 
 import com.vips.datastructure.list.LinkedList;
 import com.vips.datastructure.list.Node;
