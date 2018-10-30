@@ -82,54 +82,56 @@ public class LinkListSummation {
         LinkedList.traverseList(listB.getHead());
         System.out.println();
 
-        summation(listA,listB);
+//        summation(listA,listB);
+        LinkedList.traverseList(summation(listA.getHead(), listB.getHead()));
     }
 
-    public Node sumIt(Node<Integer> numberOne, Node<Integer> numberTwo)
+    public static Node summation(Node<Integer> firstNumber, Node<Integer> secondNumber)
     {
-        if(numberOne == null)
+        if(firstNumber == null)
         {
-            return numberTwo;
+            return secondNumber;
         }
-        else if (numberTwo == null)
+        else if (secondNumber == null)
         {
-            return numberOne;
+            return firstNumber;
         }
 
-        Node<Integer> nodeA = new Node(0);
+        Node<Integer> head = new Node(0);
+        Node<Integer> nodeA = head;
         int carry = 0;
-        while(numberOne != null && numberTwo != null)
+        while(firstNumber != null && secondNumber != null)
         {
-            int sum = numberOne.getData() + numberTwo.getData() + carry % 10;
-            carry = numberOne.getData() + numberTwo.getData() + carry / 10;
+            int sum = (firstNumber.getData() + secondNumber.getData() + carry);
+            carry = sum / 10;
+            sum = sum % 10;
 
-            Node newNode = new Node(sum);
-            nodeA.setNext(newNode);
-            numberOne = numberOne.getRight();
-            numberTwo = numberTwo.getRight();
+            nodeA.setNext(new Node(sum));
+            firstNumber = firstNumber.getRight();
+            secondNumber = secondNumber.getRight();
             nodeA = nodeA.getRight();
         }
 
-        if(numberOne != null)
+        if(firstNumber != null)
         {
             if(carry != 0){
-                nodeA.setNext(sumIt(numberOne, new Node(carry)));
+                nodeA.setNext(summation(firstNumber, new Node(carry)));
             }else {
-                nodeA.setNext(numberOne);
+                nodeA.setNext(firstNumber);
             }
         }
-        else if(numberTwo != null)
+        else if(secondNumber != null)
         {
             if(carry != 0){
-                nodeA.setNext(sumIt(numberTwo, new Node(carry)));
+                nodeA.setNext(summation(secondNumber, new Node(carry)));
             }else {
-                nodeA.setNext(numberTwo);
+                nodeA.setNext(secondNumber);
             }
         }
         else if(carry != 0)
         {
            nodeA.setNext(new Node(carry));
         }
-        return nodeA;
+        return head.getRight();
     }
 }
